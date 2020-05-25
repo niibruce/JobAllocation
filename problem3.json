@@ -1,0 +1,114 @@
+{
+	"workloads": [
+		{
+			"id": "load_balancer",
+			"symbol": "L",
+			"cpu": 100,
+			"mem": 1,
+			"disk": 2,
+			"iops": 20, 
+			"xnet": 100,
+			"inet": 100,
+			"no": 1 
+		},
+		{
+			"id": "web_assets",
+			"symbol": "W",
+			"cpu": 100,
+			"mem": 4,
+			"disk": 100,
+			"iops": 100,
+			"xnet": 500,
+			"inet": 0,
+			"no": 1
+		},
+		{
+			"id": "database",
+			"symbol": "D",
+			"cpu": 100,
+			"mem": 4,
+			"disk": 500,
+			"iops": 1000,
+			"xnet": 0,
+			"inet": 500,
+			"no": 4
+		},
+		{
+			"id": "memcache",
+			"symbol": "M",
+			"cpu": 200,
+			"mem": 8,
+			"disk": 0,
+			"iops": 0,
+			"xnet": 0,
+			"inet": 500,
+			"no": 10
+		},
+		{	
+			"id": "payment",
+			"symbol": "P",
+			"cpu": 50,
+			"mem": 2,
+			"disk": 10,
+			"iops": 80,
+			"xnet": 100,
+			"inet": 100,
+			"no": 3
+		},
+		{ 
+			"id": "appserver",
+			"symbol": "A",
+			"cpu": 100,
+			"mem": 8,
+			"disk": 10,
+			"iops": 60,
+			"xnet": 200,
+			"inet": 200,
+			"no": 3
+		}
+	],
+	"racks": [	
+		{
+			"id": "rack1",
+			"net": 20000,
+			"servers": [
+			{
+					"type": "superserver2ssd",
+					"cpu": 800,
+					"mem": 16,
+					"disk": 500,
+					"iops": 4000,
+					"net": 1000,
+					"watt": 180,
+					"no": 5
+				},
+				{ 
+					"type": "superserver1hdd",
+					"cpu": 400,
+					"mem": 16,
+					"disk": 2000,
+					"iops": 140,
+					"net": 1000,
+					"watt": 200,
+					"no": 10
+				}				
+			] 
+		},
+		{
+			"id": "rack2",
+			"net": 10000,
+			"servers": [
+				{
+					"type": "oldserver",
+					"cpu": 200,
+					"mem": 4,
+					"disk": 500,
+					"iops": 120,
+					"net": 1000,
+					"watt": 220,
+					"no": 20
+				}
+			]
+		}
+	]
+}
